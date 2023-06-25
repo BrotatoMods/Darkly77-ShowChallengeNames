@@ -7,14 +7,14 @@ var dir = ""
 var ext_dir = ""
 
 func _init(modLoader = ModLoader):
-	ModLoaderUtils.log_info("Init", SCNAMES)
+	ModLoaderLog.info("Init", SCNAMES)
 
-	dir = modLoader.UNPACKED_DIR + MOD_DIR
+	dir = ModLoaderMod.get_unpacked_dir() + MOD_DIR
 	ext_dir = dir + "extensions/"
 
 	# Add extensions
-	modLoader.install_script_extension(ext_dir + "ui/menus/ingame/challenge_ui.gd")
+	ModLoaderMod.install_script_extension(ext_dir + "ui/menus/ingame/challenge_ui.gd")
 
 
 func _ready()->void:
-	ModLoaderUtils.log_info("Ready", SCNAMES)
+	ModLoaderLog.info("Ready", SCNAMES)
